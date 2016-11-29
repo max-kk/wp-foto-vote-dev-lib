@@ -1,5 +1,5 @@
-﻿<?php
-/**
+<?php
+/*
     Hide from non admins all photos except their own.
     You can change "manage_options" to another capacity for allow more users (for example to judges) see all photos.
     https://codex.wordpress.org/Roles_and_Capabilities#Capability_vs._Role_Table
