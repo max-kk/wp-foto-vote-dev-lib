@@ -15,7 +15,9 @@ function enquene_load_fv_js_0546() {
 function load_fv_js_ss054654() {
     ?>
     <script>if (fv ) {
-        fv.lang.msg_not_authorized += ' Please <a href="http://site.com/login">login</a> or <a href="http://site.com/register">register</a>.';
+        var login_url = "https://www.follol.com/wp-login.php?redirect_to=" + location.href;
+        var register_url = "https://www.follol.com/wp-login.php?redirect_to=" + location.href;
+        fv.lang.msg_not_authorized += ' Please <a href="' + login_url + '">login</a> or <a href="' + register_url + '">register</a>.';
     }</script>
     <?php
 }
