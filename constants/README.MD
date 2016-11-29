@@ -2,7 +2,7 @@
 # Constants, that allow override default behavior
 You must add following constant's to wp-config.php.
 
-### Change FULL description field size:
+### Change FULL description field size [*from version 2.2.375]:
 ```php
 define('FV_FULL_DESCRIPTION_SIZE', 3000);
 ```
@@ -13,7 +13,7 @@ Example:
 to
 `define('FV_DB_VERSION', '1.5.205');`
 
-### Put FULL description field to JS (by default disabled for do not pull a lot of data to page content)
+### Put FULL description field to JS (by default disabled for do not pull a lot of data to page content) [*from version 2.2.375]:
 ```php
 define('FV_PUBLIC_PUT_FULL_DESCRIPTION_TO_JS', 1)
 ```
