@@ -1,4 +1,4 @@
 # wp-foto-vote-dev-lib
 Code samples for Developers
 
-Version 0.0.8
+Version 0.0.9

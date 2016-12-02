@@ -1,7 +1,7 @@
 To add some Inline JS on contest pages (List& Single) use following php code:
 
 
-In case creating new mini plugin
+### In case creating new mini plugin
 
 ```
 
@@ -39,3 +39,21 @@ function load_fv_js_ss436546() {
 
 ```
 
+### In case using JS file
+
+```js
+jQuery( document ).ready(function() {
+    if (FvLib == undefined) {
+        return;
+    }
+    // ****CODE****
+    Example:
+    // How to add own action
+    FvLib.addHook('fv/upload_before_start', function(data){
+      // some actions  
+      return true;
+    }, 10, 1);
+    
+    
+});
+````
