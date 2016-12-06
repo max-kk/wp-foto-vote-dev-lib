@@ -1,0 +1,7 @@
+/* 24 / 10 / 2016  ==  version 0.2 ==*/
+- small fix
+
+
+/* 24 august 2015  ==  version 0.1 ==*/
+- initial release
+
