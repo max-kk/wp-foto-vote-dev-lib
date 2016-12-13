@@ -1,6 +1,7 @@
 <?php
 /*
-    * Show votes count as "5 (+2)" where +2 is a count votes for last 24 hours
+    Show votes count as "5 (+2)" where +2 is a count votes for last 24 hours
+    Example: https://yadi.sk/i/ZYyaB-8V33N9XB
 */
 function filter_fv_single_photo_vars($variables, $type, $template_path) {
     if ( 'theme' != $type ) {
