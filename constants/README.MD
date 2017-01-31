@@ -33,4 +33,11 @@ define('FV_LIST_PRE_GET_META', 1);
 define('FV_DISABLE_UPDATER', 1)
 ```
 
+### If you wish to change count of Pages & Posts that queried at generaling list values for "Page, where contest are placed" (Contest Config). If you have more than 2000 posts & good hosting - you can increase this values.
+```php
+Default values:
+define('FV_GET_MAX_POSTS', 1500);
+define('FV_GET_MAX_PAGES', 800);
+```
+
 
