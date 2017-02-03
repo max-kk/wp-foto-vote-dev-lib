@@ -1,0 +1,22 @@
+/*
+    Add to Photo Contest => Settings => Custom CSS (at the bottom of page)
+*/
+
+/* For Pinterest and other themes */
+
+/* Single view > https://yadi.sk/i/RVYAnh7_3CgE45 */
+.photo-single-item--actions .btn-fb-share,
+.photo-single-item--actions .btn-share-widget {
+    display: none;
+}
+
+/* List view - only Pinterest theme */
+.contest-block .clg-facebook-share,
+.contest-block .clg-share  {
+    display: none;    
+}
+
+/* Hide Sharing Url Input > https://yadi.sk/i/whFVLIcN3CgEb2 */
+#modal-widget .sw-link { 
+    display: none; 
+}
