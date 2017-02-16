@@ -16,6 +16,12 @@
     display: none;    
 }
 
+/* List view - only Pinterest theme - on mobile */
+.clg-body-social .clg-facebook-share,
+.clg-body-social .clg-share {
+  display: none;
+}
+
 /* Hide Sharing Url Input > https://yadi.sk/i/whFVLIcN3CgEb2 */
 #modal-widget .sw-link { 
     display: none; 
