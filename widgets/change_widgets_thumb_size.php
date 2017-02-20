@@ -2,6 +2,7 @@
 /**
     20.02.2017
     With this code you can change THUMBS size/cropping params in Contest widget's
+    !!! Required main plugin version: 2.2.417 !!!
 */
 
 ## FOR LIST WIDGET ## 
