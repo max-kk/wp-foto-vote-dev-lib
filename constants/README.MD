@@ -46,4 +46,9 @@ define('FV_GET_MAX_POSTS', 1500);
 define('FV_GET_MAX_PAGES', 800);
 ```
 
+### If you do not have Email field in Upload form and uploaders are logged in you can add this contant to fetch user EMail from WP Profile and show in admin Competitors list and Export Competitors.
+```php
+define('FV_ADMIN__COMPETITORS_LIST__FETCH_USER_EMAIL', 1);
+```
+
 
