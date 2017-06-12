@@ -1,0 +1,6 @@
+// List of icons
+// https://wp-vote.net/docs/icomoon-last/demo.html
+
+.fv_upload h2 .fvicon-download2:before {
+  content: "\e907";
+}
