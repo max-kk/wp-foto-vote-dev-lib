@@ -1,0 +1,21 @@
+
+.fv_lightbox{
+	display: block;
+      position: relative;  
+}
+
+.fv_lightbox.is-video:after{
+   content: "";
+   position: absolute;
+   display: block;
+	/*  PLEASE DOWNLOAD ICON AND REPLACE URL to local */
+   background: url(http://icons.iconarchive.com/icons/dtafalonso/android-l/256/Youtube-icon.png);
+
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
