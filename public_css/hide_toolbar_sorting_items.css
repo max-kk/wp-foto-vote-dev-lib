@@ -1,0 +1,8 @@
+/* Hide some of Order variants */
+
+.fv_sorting [data-order="default"],
+.fv_sorting [data-order="oldest"] {
+
+	display: none;
+
+}
