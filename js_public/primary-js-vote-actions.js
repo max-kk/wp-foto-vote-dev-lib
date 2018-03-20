@@ -39,3 +39,18 @@ FvLib.addFilter('fv/vote/get_data', function(data){
     /// !! REQUIRED !!
     return data; 
 }, 10, 1);
+
+/*
+    // action before voting
+    if (!FvLib.callHook('fv/start_voting', security_type, fv_subscribed, action, window.fv_current_id)) {
+        return false;
+    }
+*/
+
+// ## Deny vote from some browser
+FvLib.addFilter('fv/start_voting', function(security_type, fv_subscribed, action, fv_current_id){ 
+    if ( navigator.userAgent.indexOf("Mozilla/5.0 (Windows NT 6.1; rv52.0) Gecko/20100101 Firefox/52.0") != -1 ) {
+        alert("Not allowed vote from this browser!");
+        return false;
+    }
+});
