@@ -1,5 +1,7 @@
 <?php
 
+// COPY AFTER THIS LINE >>>>>>>>>>
+
 /**
  * How to filter Competitor List description
  * In this example we add extra text with current position in list
