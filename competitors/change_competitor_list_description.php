@@ -16,7 +16,7 @@ add_filter('fv/public/competitor/get_tpl_desc', function($DESC, $type, $competit
 	}
     global $fv_counter;
     $fv_counter++;
-    if ( $fv_counter < 10 ) {
+    if ( $fv_counter <= 10 ) {
         $DESC = '<span class="fv-list-counter">' . $fv_counter . ' place</span> <br/>' . $DESC;
     }
     return $DESC;
