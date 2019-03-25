@@ -27,13 +27,13 @@ add_filter('fv/vote/get_resp_code', function($RES, $contest, $check_ip, $exists_
     // https://codex.wordpress.org/Roles_and_Capabilities#Capability_vs._Role_Table
 	if ( current_user_can("manage_options") ) {
 		// FOr example 3+1 = 4
-        if ( $exists_count >= $contest->voting_max_count+1 ) {
-            $RES = 2; // user Used all votes
-        }
+		if ( $exists_count >= $contest->voting_max_count+1 ) {
+		    $RES = 2; // user Used all votes
+		}
 
-        if ( $exists_count_for_photo ) {
-            $RES = 3; // user was already voted for this photo
-        }
+		if ( $exists_count_for_photo ) {
+		    $RES = 3; // user was already voted for this photo
+		}
     				
 	}
 	return $RES;
