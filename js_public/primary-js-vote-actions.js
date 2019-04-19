@@ -93,3 +93,40 @@ jQuery( document ).ready(function() {
 
 });
 
+// Diff text for Diff cases
+
+jQuery( document ).ready(function() {
+    if (FvLib == undefined) {
+        return;
+    }
+
+    // ## Fire some actions when wote is completed
+    FvLib.addFilter('fv/vote/get_data', function(data){
+        /**
+         "data.res" can pass : [
+         2 => 'Already voted',
+         3 => '24 hours not passed',
+         4 => 'date end',
+         5 => 'not authorized',
+         6 => 'wrong reCAPTCHA',
+         66 => 'need reCAPTCHA',
+         98 => 'invalid security token',
+         99 => 'error',
+         101 => 'need payment',
+         ]
+         */
+
+if ( data.res == 1 && fv.user_id === fv.data[data.ct_id].user_id ){
+  fv.lang.invite_friend = "Incite friends";
+} elseif (data.res == 4 ) {
+  fv.lang.invite_friend = "Contest ended - share to your friend";
+} else {
+  fv.lang.invite_friend = "Default text";
+}
+
+
+        /// !! REQUIRED !!
+        return data;
+    }, 10, 1);
+
+});
