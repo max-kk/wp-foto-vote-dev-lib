@@ -38,3 +38,17 @@ add_filter('fv/vote/get_resp_code', function($RES, $contest, $check_ip, $exists_
 	}
 	return $RES;
 });
+
+// Unlock one IP
+
+add_filter('fv/vote/get_resp_code', function($RES, $contest, $check_ip, $exists_count, $exists_count_for_photo){
+	if ( $RES == true ) {
+		return true;
+	}
+    	// You can change USER Cap
+    	// https://codex.wordpress.org/Roles_and_Capabilities#Capability_vs._Role_Table
+	if ( fv_get_user_ip() == "SOME_IP" ) {
+		return true;    				
+	}
+	return $RES;
+});
