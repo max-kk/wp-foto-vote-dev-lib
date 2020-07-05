@@ -5,9 +5,7 @@
     This code allows change on upload filename from
     /wp-content/uploads/fv-contest/c1/
     to
-    /wp-content/uploads/fv-contest/c4/dslr-wildlife/Gator_Flipping_3960_Bill_Smith_dslr-wildlife.jpg
-    or detailed:
-    /wp-content/uploads/fv-contest/c{CONTEST_ID}/{meta_Camera-Subject}/{filename}_{meta_first_name}_{meta_last_name}_{meta_Camera-Subject}.{ext}
+    /wp-content/uploads/fv-contest/c{CONTEST_ID}/{filename}_{meta_first_name}_{meta_last_name}_{meta_Camera-Subject}.{ext}
 
     Where:
         "dslr-wildlife" is a value from Drobdown with Meta key 'Camera-Subject'
@@ -24,7 +22,6 @@
 add_action('fv/public/before_upload', 'fv_public_before_upload_action932', 10);
 
 function fv_public_before_upload_action932 () {
-    add_filter('upload_dir', 'fv_filter_upload_dir932', 20);
     add_filter('wp_unique_filename', 'fv_unique_filename_callback932', 10, 4);
 }
 
@@ -34,7 +31,6 @@ function fv_public_before_upload_action932 () {
 add_action('fv/public/after_upload', 'fv_public_after_upload_action932', 10);
 
 function fv_public_after_upload_action932 () {
-    remove_filter('upload_dir', 'fv_filter_upload_dir932', 20);
     remove_filter('wp_unique_filename', 'fv_unique_filename_callback932', 10);
 }
 
@@ -83,42 +79,4 @@ function fv_unique_filename_callback932( $filename, $ext, $dir, $unique_filename
         . $ext;
 
     return $filename;
-}
-
-/**
- * Change WP upload dir to custom
- * @param array $path_data
- *
- * @return array $path_data
- */
-function fv_filter_upload_dir932($path_data)
-{
-    if (!empty($path_data['error'])) {
-        return $path_data; //error or uploading
-    }
-
-    // IF not saved Photo data
-    if ( !$new_photo = wp_cache_get('fv_new_photo_data', 'fv') ) {
-        return $path_data;
-    }
-
-    //remove default subdir (year/month)
-    $path_data['path'] = str_replace($path_data['subdir'], '', $path_data['path']);
-    $path_data['url'] = str_replace($path_data['subdir'], '', $path_data['url']);
-
-    $path_data['subdir'] = '/fv-contest';
-    $path_data['path'] .= '/fv-contest';
-    $path_data['url'] .= '/fv-contest';
-    if ( isset($new_photo['contest_id']) ) {
-        $contest_id = (int)$new_photo['contest_id'];
-        $path = '/c' . $contest_id . '/' . strtolower($new_photo['meta']['camera-subject']);
-
-        // /fv-contest/c4/dslr-wildlife/Gator_Flipping_3960_Bill_Smith_dslr-wildlife.jpg
-
-        $path_data['subdir'] .= $path;
-        $path_data['path'] .= $path;
-        $path_data['url'] .= $path;
-    }
-
-    return $path_data;
 }
