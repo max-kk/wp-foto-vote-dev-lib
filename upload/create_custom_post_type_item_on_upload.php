@@ -1,5 +1,5 @@
 <?php
-
+//COpy after!
 add_action('init', function() {
     register_post_type( 'fv_cpt', [
         'labels'              => [
