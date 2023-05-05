@@ -7,9 +7,9 @@ add_filter('fv/vote/get_resp_code', function($RES, $contest, $check_ip, $exists_
 		return true;
 	}
 
-  if ( $exists_count_for_photo <= 2 ) {
-      return true;
-  }
+	if ( $exists_count_for_photo <= 2 ) {
+	    return true;
+	}
     				
 	return $RES;
-});
+}, 10, 5);
