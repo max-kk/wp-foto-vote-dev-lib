@@ -8,11 +8,10 @@ add_shortcode("fv_competitor_votes", function($atts) {
         return 'NO ID!';
     }
     
-
     $c = fv_get_competitor($atts['id']);
     
     if ( $c ) {
-      $c->get_votes();
+      return $c->getVotes();
     }
        
     return 'No Competitor!';  
